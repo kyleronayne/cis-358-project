@@ -30,6 +30,7 @@ struct ArticlePreview: View {
             HStack {
                 LikeButton()
                     .padding(.bottom, 30)
+            
                 
                 Text(articleTitle)
                     .frame(alignment: .topLeading)

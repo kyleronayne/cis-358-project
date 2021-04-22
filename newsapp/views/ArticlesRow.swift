@@ -24,6 +24,7 @@ struct ArticlesRow: View {
                         ForEach(articleRetriever.response) {response in
                             NavigationLink(destination: Article(articleUrl: response.url)) {
                                 ArticlePreview(articleTitle: response.title, articleImage: response.image).accentColor(Color.black)
+                    
                             }
                         }
                     }
@@ -62,7 +63,10 @@ class ArticleRetriever: ObservableObject {
                 let title = dataType.1["title"].stringValue
                 let content = dataType.1["content"].stringValue
                 let url = dataType.1["url"].stringValue
-                let image = dataType.1["urlToImage"].stringValue
+                var image = dataType.1["urlToImage"].stringValue
+                if (dataType.1["urlToImage"].stringValue.isEmpty){
+                    image  = "https://static.thenounproject.com/png/58934-200.png"
+                }
                 let id = dataType.1["publishedAt"].stringValue
                 DispatchQueue.main.async {
                     self.response.append(ResponseStructure(id: id, title: title, content: content, url: url, image: image))
