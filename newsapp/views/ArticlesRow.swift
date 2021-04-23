@@ -23,7 +23,8 @@ struct ArticlesRow: View {
             if(isFavorites == true) {
                 ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .center, spacing: 25) {
-                            ForEach(articleRetriever.response) {favorites in
+                            // should populate with observed object favorites
+                            ForEach(articleRetriever.favorites) {favorites in
                                 NavigationLink(destination: Article(articleUrl: favorites.articleUrl)) {
                                     ArticlePreview(articleTitle: favorites.articleTitle, articleImage: favorites.articleImage)
                                 }
