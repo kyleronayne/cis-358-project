@@ -28,8 +28,7 @@ struct ArticlePreview: View {
                     .overlay(RoundedRectangle(cornerRadius: 30).stroke(lineWidth: 2.5))
             }
             HStack {
-                LikeButton()
-                    .padding(.bottom, 30)
+                
             
                 
                 Text(articleTitle)

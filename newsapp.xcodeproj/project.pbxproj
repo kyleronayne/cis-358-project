@@ -16,6 +16,7 @@
 		21727C59260954370062B07B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21727C58260954370062B07B /* Preview Assets.xcassets */; };
 		21727C64260954370062B07B /* newsappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21727C63260954370062B07B /* newsappTests.swift */; };
 		21727C6F260954370062B07B /* newsappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21727C6E260954370062B07B /* newsappUITests.swift */; };
+		21CAA1F826332789001C1C12 /* BingNews-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21CAA1F726332789001C1C12 /* BingNews-Info.plist */; };
 		2E2107D0261BA9A600EC161F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2107CF261BA9A600EC161F /* MainView.swift */; };
 		2E2107D5261BD89C00EC161F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2107D4261BD89C00EC161F /* User.swift */; };
 		2E2107DA261BDFF500EC161F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */; };
@@ -68,6 +69,7 @@
 		21727C6A260954370062B07B /* newsappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newsappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21727C6E260954370062B07B /* newsappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsappUITests.swift; sourceTree = "<group>"; };
 		21727C70260954370062B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21CAA1F726332789001C1C12 /* BingNews-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BingNews-Info.plist"; sourceTree = "<group>"; };
 		2E2107CF261BA9A600EC161F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2E2107D4261BD89C00EC161F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				2E4183452632914200A6A496 /* BingNews-Info.plist */,
+				21CAA1F726332789001C1C12 /* BingNews-Info.plist */,
 				2E2107D4261BD89C00EC161F /* User.swift */,
 				2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */,
 				21727C50260954330062B07B /* newsapp */,
@@ -367,6 +370,7 @@
 				21727C56260954370062B07B /* Assets.xcassets in Resources */,
 				2E2107DA261BDFF500EC161F /* GoogleService-Info.plist in Resources */,
 				2E4183462632914200A6A496 /* BingNews-Info.plist in Resources */,
+				21CAA1F826332789001C1C12 /* BingNews-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

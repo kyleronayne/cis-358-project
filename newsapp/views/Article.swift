@@ -21,7 +21,7 @@ struct Article: View {
         ArticleWebView(url: articleUrl)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    LikeButton()
+//                    LikeButton()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: shareArticle) {
