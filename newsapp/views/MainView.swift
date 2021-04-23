@@ -20,7 +20,7 @@ struct MainView: View {
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { key in
-                        ArticlesRow(category: key)
+                        ArticlesRow(category: key, isFavorites: false)
                     }
                 }
                 .navigationTitle("Headlines")
@@ -30,9 +30,18 @@ struct MainView: View {
                 Image(systemName: "antenna.radiowaves.left.and.right")
                 Text("News")
             }
+                
             
             
-            Text("Favorites")
+            NavigationView {
+                List {
+                    ForEach(categories, id: \.self) { key in
+                        ArticlesRow(category: key, isFavorites: true)
+                    }
+                }
+                .navigationTitle("Favorites")
+            }
+            .navigationBarHidden(true)
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Favorites")

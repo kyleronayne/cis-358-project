@@ -11,28 +11,54 @@ import SDWebImageSwiftUI
 
 struct ArticlesRow: View {
     var category: String
+    var isFavorites: Bool
     @StateObject var articleRetriever = ArticleRetriever()
+    @State var likeButton: LikeButton?
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(category.uppercased())
                 .font(.headline)
                 .padding(.top, 5)
-
-            ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .center, spacing: 25) {
-                        ForEach(articleRetriever.response) {response in
-                            NavigationLink(destination: Article(articleUrl: response.articleUrl)) {
-                                ArticlePreview(articleTitle: response.articleTitle, articleImage: response.articleImage)
-                    
+            if(isFavorites == true) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .center, spacing: 25) {
+                            // should populate with observed object favorites
+                            ForEach(articleRetriever.favorites) {favorites in
+                                NavigationLink(destination: Article(articleUrl: favorites.articleUrl)) {
+                                    ArticlePreview(articleTitle: favorites.articleTitle, articleImage: favorites.articleImage)
+                                }
+                                LikeButton(articleLiked: favorites, articleRetriever: articleRetriever)
+    //                                .padding(.bottom, 30)
+                                
                             }
                         }
-                    }
-                    .onAppear {
-                        articleRetriever.get(category: category.lowercased())
-                    }
+                        .onAppear {
+                            articleRetriever.get(category: category.lowercased(), type: "favorites")
+                        }
+                }
+                .frame(height: 275)
             }
-            .frame(height: 275)
+            else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .center, spacing: 25) {
+                            ForEach(articleRetriever.response) {response in
+                                
+                                NavigationLink(destination: Article(articleUrl: response.articleUrl)) {
+                                    ArticlePreview(articleTitle: response.articleTitle, articleImage: response.articleImage)
+                                }
+                                LikeButton(articleLiked: response, articleRetriever: articleRetriever)
+    //                                .padding(.bottom, 30)
+                                
+                            }
+                        }
+                        .onAppear {
+                            articleRetriever.get(category: category.lowercased(), type: "notfavorites")
+                        }
+                }
+                .frame(height: 275)
+            }
+            
         }
     }
 }
@@ -42,10 +68,21 @@ struct ResponseStructure: Identifiable {
     var articleTitle: String
     var articleUrl: String
     var articleImage: String
+    var isFavorite: Bool
 }
 
 class ArticleRetriever: ObservableObject {
     @Published var response = [ResponseStructure]()
+    @Published var favorites = [ResponseStructure]()
+    
+    func addFavorite(article: ResponseStructure) {
+        self.favorites.append(article)
+    }
+    
+    func removeFavorite(article: ResponseStructure) {
+        self.favorites.remove(at: self.favorites.firstIndex(where: {$0.articleUrl == article.articleUrl}) ?? -1)
+    }
+    
     private var apiKey: String {
         get {
             guard let filePath = Bundle.main.path(forResource: "BingNews-Info", ofType: "plist") else {
@@ -59,7 +96,7 @@ class ArticleRetriever: ObservableObject {
         }
     }
     
-    func get(category: String) {
+    func get(category: String, type: String) {
         let source = "https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Moderate&category=\(category)"
         let url = URL(string: source)
         var request = URLRequest(url: url!)
@@ -79,7 +116,16 @@ class ArticleRetriever: ObservableObject {
                 let articleImage = dataType.1["image"]["thumbnail"]["contentUrl"].stringValue
                 let articleTitle = dataType.1["name"].stringValue
                 DispatchQueue.main.async {
-                    self.response.append(ResponseStructure(id: articleId, articleTitle: articleTitle, articleUrl: articleUrl, articleImage: articleImage))
+                    if(type == "favorites") {
+                        print("FAVORITES SHOULD PRINT HERE", self.favorites)
+//                        if(self.favorites.contains(where: {$0.articleUrl == articleUrl})) {
+//                            self.response.append(ResponseStructure(id: articleId, articleTitle: articleTitle, articleUrl: articleUrl, articleImage: articleImage, isFavorite: false))
+//                        }
+                    }
+                    else {
+                        self.response.append(ResponseStructure(id: articleId, articleTitle: articleTitle, articleUrl: articleUrl, articleImage: articleImage, isFavorite: false))
+                    }
+                    
                     
                 }
             
