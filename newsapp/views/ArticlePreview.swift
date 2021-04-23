@@ -26,6 +26,13 @@ struct ArticlePreview: View {
                     .scaledToFit()
                     .cornerRadius(30)
                     .overlay(RoundedRectangle(cornerRadius: 30).stroke(lineWidth: 2.5))
+            } else {
+                Image("Icon")
+                    .resizable()
+                    .frame(width: 275, height: 150)
+                    .scaledToFit()
+                    .cornerRadius(30)
+                    .overlay(RoundedRectangle(cornerRadius: 30).stroke(lineWidth: 2.5))
             }
             HStack {
                 LikeButton()
