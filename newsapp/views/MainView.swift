@@ -11,9 +11,9 @@ import SwiftUI
 struct MainView: View {
     @State private var showingAlert = false
     @State private var darkMode = false
-    @State private var accentColor = Color.blue
+    @State private var accentColor = Color.black
     
-    var categories: [String] = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
+    var categories: [String] = ["World", "US", "Politics", "Health", "Business", "Sports", "Entertainment"]
     
     var body: some View {
         TabView {
@@ -80,15 +80,14 @@ struct MainView: View {
     }
     
     private func setupColorScheme() {
+        let window = UIApplication.shared.windows.first
         if(darkMode) {
-            let window = UIApplication.shared.windows.first
             window?.overrideUserInterfaceStyle = .dark
-            window?.tintColor = UIColor(accentColor)
+            window?.tintColor = UIColor(.white)
         }
         else {
-            let window = UIApplication.shared.windows.first
             window?.overrideUserInterfaceStyle = .light
-            window?.tintColor = UIColor(accentColor)
+            window?.tintColor = UIColor(.black)
         }
     }
 }

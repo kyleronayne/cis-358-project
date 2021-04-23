@@ -24,6 +24,8 @@ DerivedData/
 
 ## Obj-C/Swift specific
 *.hmap
+/BingNews-Info.plist
+BingNews-Info.plist
 
 ## App packaging
 *.ipa
@@ -88,3 +90,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+#PLists
+./BingNews-Info.plist

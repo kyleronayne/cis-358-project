@@ -26,6 +26,7 @@
 		2E2107EF261BE8B400EC161F /* AccountCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2107EE261BE8B400EC161F /* AccountCreationView.swift */; };
 		2E331128262D4914004B1BC2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E331127262D4914004B1BC2 /* SwiftyJSON */; };
 		2E331133262D4A14004B1BC2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E331132262D4A14004B1BC2 /* SDWebImageSwiftUI */; };
+		2E4183462632914200A6A496 /* BingNews-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E4183452632914200A6A496 /* BingNews-Info.plist */; };
 		2EA561AD26126ACE00600030 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA561AC26126ACE00600030 /* LoginView.swift */; };
 		2EBCD150262FB6B5005EA119 /* ArticleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCD14F262FB6B5005EA119 /* ArticleWebView.swift */; };
 		2EBCD158262FBA0D005EA119 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCD157262FBA0D005EA119 /* Article.swift */; };
@@ -72,6 +73,7 @@
 		2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E2107E9261BE3E700EC161F /* AccountCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationViewModel.swift; sourceTree = "<group>"; };
 		2E2107EE261BE8B400EC161F /* AccountCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationView.swift; sourceTree = "<group>"; };
+		2E4183452632914200A6A496 /* BingNews-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BingNews-Info.plist"; sourceTree = "<group>"; };
 		2EA561AC26126ACE00600030 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2EBCD14F262FB6B5005EA119 /* ArticleWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebView.swift; sourceTree = "<group>"; };
 		2EBCD157262FBA0D005EA119 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		21727C45260954330062B07B = {
 			isa = PBXGroup;
 			children = (
+				2E4183452632914200A6A496 /* BingNews-Info.plist */,
 				2E2107D4261BD89C00EC161F /* User.swift */,
 				2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */,
 				21727C50260954330062B07B /* newsapp */,
@@ -363,6 +366,7 @@
 				21727C59260954370062B07B /* Preview Assets.xcassets in Resources */,
 				21727C56260954370062B07B /* Assets.xcassets in Resources */,
 				2E2107DA261BDFF500EC161F /* GoogleService-Info.plist in Resources */,
+				2E4183462632914200A6A496 /* BingNews-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
